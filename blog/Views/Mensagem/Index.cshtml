@@ -1,0 +1,26 @@
+﻿@model IEnumerable<blog.Models.Mensagem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>BLOG ZERO</h1>
+
+<p>
+    <a asp-action="Create">Criar Post</a>
+</p>
+
+
+@foreach (var item in Model)
+{
+    <div>
+        <h1> @Html.DisplayFor(modelItem => item.Titulo)</h1>
+    </div>
+    <div>
+        <p> @Html.DisplayFor(modelItem => item.Descricao)</p>
+    </div>
+    <div>
+        <p> @Html.DisplayFor(modelItem => item.Categoria.CategoriaId)</p>
+    </div>
+
+}
